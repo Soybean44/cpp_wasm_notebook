@@ -1,0 +1,3 @@
+project:
+  title: "Cpp Test"
+  pre-render: scripts/render_cpp.py
