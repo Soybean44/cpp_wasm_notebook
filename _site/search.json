@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "C++ Test",
+    "section": "",
+    "text": "Here is a link to cpp."
+  },
+  {
+    "objectID": "cpp/index.html",
+    "href": "cpp/index.html",
+    "title": "C++ Test",
+    "section": "",
+    "text": "Here we define our imports\n#include &lt;wasm.h&gt;\nHere we define our functions and variables to be used\nint screenWidth;\nint screenHeight;\nint x;\nint y;\nfloat vx;\nfloat vy;\n\nWASM_IMPORT void draw_rect(int x, int y, int width, int height);\nWASM_IMPORT void clear_rect(int x, int y, int width, int height);\n\nWASM_EXPORT void setup(int w, int h) {\n  screenWidth = w;\n  screenHeight = h;\n  x = screenWidth/2-25;\n  y = screenHeight/2-25;\n  vx = 1;\n  vy = 1;\n}\n\nWASM_EXPORT void draw() {\n  clear_rect(0, 0, screenWidth, screenHeight);\n  draw_rect(x, y, 50, 50);\n}\nWASM_EXPORT void update() {\n  x += vx;\n  y += vy;\n  if (x &gt; screenWidth-50 || x &lt; 0) {\n    vx = -vx;\n  }\n  if (y &gt; screenHeight-50 || y &lt; 0) {\n    vy = -vy;\n  }\n}\nNow we display a canvas with a square"
+  },
+  {
+    "objectID": "cpp/dvd.html",
+    "href": "cpp/dvd.html",
+    "title": "DVD Screensaver",
+    "section": "",
+    "text": "Here we define our imports\n#include &lt;wasm.h&gt;\nHere we define our functions and variables to be used\nint screenWidth;\nint screenHeight;\nint x;\nint y;\nfloat vx;\nfloat vy;\n\nWASM_IMPORT void draw_rect(int x, int y, int width, int height);\nWASM_IMPORT void clear_rect(int x, int y, int width, int height);\n\nWASM_EXPORT void setup(int w, int h) {\n  screenWidth = w;\n  screenHeight = h;\n  x = screenWidth/2-25;\n  y = screenHeight/2-25;\n  vx = 1;\n  vy = 1;\n}\n\nWASM_EXPORT void draw() {\n  clear_rect(0, 0, screenWidth, screenHeight);\n  draw_rect(x, y, 50, 50);\n}\nWASM_EXPORT void update() {\n  x += vx;\n  y += vy;\n  if (x &gt; screenWidth-50 || x &lt; 0) {\n    vx = -vx;\n  }\n  if (y &gt; screenHeight-50 || y &lt; 0) {\n    vy = -vy;\n  }\n}\nNow we display a canvas and interface it with our screensaver\n&lt;canvas id=\"wasmCanvas\" width=600 height=400 style=\"background: #182546\"&gt;&lt;/canvas&gt;\n&lt;script src=\"./index.js\"&gt;&lt;/script&gt;"
+  }
+]
