@@ -15,4 +15,4 @@ project:
 
 This ensures that the wasm is copied over to the final rendered project as well as compiles down the cpp codeblocks to wasm
 
-From there look to the `cpp` directory to get an idea of how to structure a wasm notebook by the given DVD bounce example. Note that this is raw wasm from clang, so you have to interface with the javascript on your own, as well as remembering that there is no standard library, however if need be you can modify the script to link with [newlibc](https://github.com/bminor/newlib).
+From there look to the `dvd` directory to get an idea of how to structure a wasm notebook by the given DVD bounce example. Note that this is raw wasm from clang, so you have to interface with the javascript on your own, as well as remembering that there is no standard library, however if need be you can modify the script to link with [newlibc](https://github.com/bminor/newlib).
