@@ -2,7 +2,7 @@ const canvas = document.getElementById('wasmCanvas');
 const ctx = canvas.getContext('2d');
 ctx.fillStyle = 'red';
 async function start() {
-  const wasm = await WebAssembly.instantiateStreaming(fetch("./index.wasm"), {
+  const wasm = await WebAssembly.instantiateStreaming(fetch("./dvd.wasm"), {
     'env': {
       'draw_rect': (x, y, width, height) => ctx.fillRect(x, y, width, height),
       'clear_rect': (x, y, width, height) => ctx.clearRect(x, y, width, height)

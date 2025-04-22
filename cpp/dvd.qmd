@@ -1,5 +1,5 @@
 ---
-title: C++ Test
+title: DVD Screensaver
 ---
 Here we define our imports
 ```cpp
@@ -43,9 +43,12 @@ WASM_EXPORT void update() {
 }
 ```
 
-Now we display a canvas with a square
+Now we display a canvas and interface it with our screensaver
+
+```{.html}
+{{< include wasm.html >}}
+```
 
 ```{=html}
-<canvas id="wasmCanvas" width=600 height=400 style="background: #182546"></canvas>
-<script src="index.js"></script>
+{{< include wasm.html >}}
 ```
