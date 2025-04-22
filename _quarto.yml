@@ -1,3 +1,12 @@
 project:
   title: "Cpp Test"
+  type: website
   pre-render: scripts/render_cpp.py
+  resources: "*.wasm"
+
+website:
+  title: "Cpp Test"
+
+format:
+  html:
+    theme: cosmo

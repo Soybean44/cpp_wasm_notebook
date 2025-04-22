@@ -1,0 +1,51 @@
+---
+title: C++ Test
+---
+Here we define our imports
+```cpp
+#include <wasm.h>
+```
+
+Here we define our functions and variables to be used
+```cpp
+int screenWidth;
+int screenHeight;
+int x;
+int y;
+float vx;
+float vy;
+
+WASM_IMPORT void draw_rect(int x, int y, int width, int height);
+WASM_IMPORT void clear_rect(int x, int y, int width, int height);
+
+WASM_EXPORT void setup(int w, int h) {
+  screenWidth = w;
+  screenHeight = h;
+  x = screenWidth/2-25;
+  y = screenHeight/2-25;
+  vx = 1;
+  vy = 1;
+}
+
+WASM_EXPORT void draw() {
+  clear_rect(0, 0, screenWidth, screenHeight);
+  draw_rect(x, y, 50, 50);
+}
+WASM_EXPORT void update() {
+  x += vx;
+  y += vy;
+  if (x > screenWidth-50 || x < 0) {
+    vx = -vx;
+  }
+  if (y > screenHeight-50 || y < 0) {
+    vy = -vy;
+  }
+}
+```
+
+Now we display a canvas with a square
+
+```{=html}
+<canvas id="wasmCanvas" width=600 height=400 style="background: #182546"></canvas>
+<script src="index.js"></script>
+```
